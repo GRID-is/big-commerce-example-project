@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "build": "esbuild ./src/app.ts --bundle --platform=node --outfile=./app.js",
-    "prettier:fix": "prettier --write ."
+    "prettier:fix": "prettier --write .",
+    "prod": "pm2 start app.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "@grid-is/api": "^1.0.0-rc.9",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "pm2": "^6.0.5",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
