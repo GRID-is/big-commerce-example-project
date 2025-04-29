@@ -1,0 +1,22 @@
+{
+  "name": "big_commerce_integration",
+  "version": "1.0.0",
+  "description": "A tiny Node.js/Express bridge that integrates BigCommerce API with GRID API.",
+  "main": "app.js",
+  "scripts": {
+    "build": "esbuild ./src/app.ts --bundle --platform=node --outfile=./app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grid-is/api": "^1.0.0-rc.9",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "esbuild": "^0.25.3",
+    "prettier": "^3.5.3"
+  }
+}
