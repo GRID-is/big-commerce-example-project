@@ -7,7 +7,7 @@ export class PricingApi {
 
   constructor(
     apiKey = process.env.GRID_API_KEY,
-    workbookId = process.env.GRID_API_WORKBOOK_ID || ''
+    workbookId = process.env.GRID_API_WORKBOOK_ID || "",
   ) {
     this.gridApi = new Grid({
       apiKey: apiKey,
@@ -42,14 +42,14 @@ export class PricingApi {
 
     const data = await this.gridApi.workbooks.query(
       this.workbookId,
-      queryParams
+      queryParams,
     );
 
     if (data.read.length === 0) {
       throw new Error("No data found");
     }
     // @ts-expect-error type incorrectly evaluates data
-    const price = data.read[0].data.v
+    const price = data.read[0].data.v;
 
     if (!price || typeof price !== "number") {
       throw new Error("Invalid price data");

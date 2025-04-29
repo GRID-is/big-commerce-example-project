@@ -12,12 +12,12 @@ type RemoveItemInCartParams = {
 };
 
 type UpdateItemInCartParams = {
-    cartId: string;
-    price: number;
-    quantity: number;
-    product_id: string;
-    option_selections: OptionSelection[];
-  };
+  cartId: string;
+  price: number;
+  quantity: number;
+  product_id: string;
+  option_selections: OptionSelection[];
+};
 
 export type ProductModifier = {
   id: number;
@@ -32,13 +32,13 @@ export type OptionSelection = {
 };
 
 type UpdateItemInCartProps = {
-    lineItemId: string;
-    price: number;
-    quantity: number;
-    product_id: string;
-    model_id: string;
-    option_selections: OptionSelection[];
-  };
+  lineItemId: string;
+  price: number;
+  quantity: number;
+  product_id: string;
+  model_id: string;
+  option_selections: OptionSelection[];
+};
 
 export class BigCommerceApi {
   apiToken: string;
@@ -46,10 +46,10 @@ export class BigCommerceApi {
 
   constructor(
     apiToken = process.env.BIG_COMMERCE_API_TOKEN,
-    storeHash = process.env.BIG_COMMERCE_STORE_HASH
+    storeHash = process.env.BIG_COMMERCE_STORE_HASH,
   ) {
-    this.apiToken = apiToken || '';
-    this.storeHash = storeHash || '';
+    this.apiToken = apiToken || "";
+    this.storeHash = storeHash || "";
   }
 
   addItemToCart({
@@ -178,8 +178,7 @@ export class BigCommerceApi {
     return fetch(url, options).then((res) => res.json());
   }
 
-
- updateItemToCart({
+  updateItemToCart({
     cartId,
     price,
     quantity,
@@ -193,9 +192,9 @@ export class BigCommerceApi {
       cartId +
       "/items" +
       "?include=lineItems.physicalItems.options";
-  
+
     //XXX actually make a request to fetch the product and get hte model_id option id.
-  
+
     const body = {
       line_items: [
         {
@@ -209,7 +208,7 @@ export class BigCommerceApi {
       currency: { code: "CAD" },
       locale: "en-US",
     };
-  
+
     const options = {
       method: "POST",
       headers: {
@@ -219,7 +218,7 @@ export class BigCommerceApi {
       },
       body: JSON.stringify(body),
     };
-  
+
     return fetch(url, options).then((res) => res.json());
   }
 }

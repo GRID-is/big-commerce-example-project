@@ -4,7 +4,8 @@
   "description": "A tiny Node.js/Express bridge that integrates BigCommerce API with GRID API.",
   "main": "app.js",
   "scripts": {
-    "build": "esbuild ./src/app.ts --bundle --platform=node --outfile=./app.js"
+    "build": "esbuild ./src/app.ts --bundle --platform=node --outfile=./app.js",
+    "prettier:fix": "prettier --write ."
   },
   "author": "",
   "license": "ISC",

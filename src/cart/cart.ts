@@ -8,13 +8,13 @@ import { PricingApi } from "../api/pricingApi";
 function modifiersToOptionSelections(
   modifiers: ProductModifier[],
   model_id: string,
-  model_description: string
+  model_description: string,
 ): OptionSelection[] {
   // 1. filter out the model_id and model_description modifiers
   const filteredModifiers = modifiers.filter(
     (modifier) =>
       modifier.display_name === "model_id" ||
-      modifier.display_name === "model_description"
+      modifier.display_name === "model_description",
   );
   // 2. build a modifier object with the option_id and the value
   return filteredModifiers
@@ -63,7 +63,7 @@ export class Cart {
     const option_selections = modifiersToOptionSelections(
       modifiers,
       model_id,
-      model_description
+      model_description,
     );
     const itemInCart = this.bigCommerceApi.addItemToCart({
       cartId,
@@ -100,7 +100,7 @@ export class Cart {
     const option_selections = modifiersToOptionSelections(
       modifiers,
       model_id,
-      model_description
+      model_description,
     );
     const itemInCart = await this.bigCommerceApi.createCart({
       lineItemId,

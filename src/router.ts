@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { Cart } from './cart/cart'
+import { Cart } from "./cart/cart";
 import { PricingApi } from "./api/pricingApi";
 import { BigCommerceApi } from "./api/bigCommerceApi";
 
@@ -39,8 +39,7 @@ router.put("/update-item", async (req: Request, res: Response) => {
   try {
     const cartRes = await cart.updateItem(req.body);
     res.status(200).json(cartRes);
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error updating item:", error);
     res.status(500).json({ error: "Failed to update item" });
   }

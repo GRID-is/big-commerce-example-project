@@ -1,4 +1,4 @@
-import './env';
+import "./env";
 
 import express from "express";
 import router from "./router";
