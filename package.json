@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@grid-is/api": "^1.0.0-rc.9",
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "pm2": "^6.0.5",

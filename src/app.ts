@@ -1,9 +1,16 @@
 import "./env";
+const cors = require('cors');
 
 import express from "express";
 import router from "./router";
 
 const app = express();
+
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // built‑in JSON body parser
 app.use(express.json());
